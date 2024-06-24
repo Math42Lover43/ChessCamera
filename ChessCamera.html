@@ -6,7 +6,7 @@
         </title>
         <meta charset="utf-8">
         <style>
-            body {
+            body, button {
                 font-family: 'Segoe UI';
             }
             .error {
@@ -15,9 +15,28 @@
             .good {
                 color: rgb(0,170,0);
             }
+            .code {
+                font-family: monospace;
+            }
+            button {
+                border-radius: 5px; background-color: black; color: white;
+            }
         </style>
     </head>
     <body>
-        You can use this website to take a photo of chess notation to convert into a PGN file to use on another site.
+        <p>
+            You can use this website to take a photo of chess notation to convert into a PGN file to use on another site.
+        </p>
+        <div class="error">
+            Your camera is disabled. Please enable your camera for this website to work properly.
+            <button onclick="enable_camera();">
+                Enable camera
+            </button>
+        </div>
     </body>
+    <script>
+        function enable_camera() {
+            navigator.mediaDevices.getUserMedia({ video: true });
+        }
+    </script>
 </html>
