@@ -33,12 +33,16 @@
                 Enable camera
             </button>
         </div>
+        <div id="record" style="display: none;">
+            <input type="file" accept="image/*" capture="user" style="text-align: center; width: 50%; height: 50%;"/>
+        </div>
     </body>
     <script>
         function enable_camera() {
             navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
                 document.getElementById("camstatus").className = "good";
                 document.getElementById("camstatus").innerHTML = "Your camera is enabled for this site.";
+                document.getElementById("record").style.display = "show";
             });
         }
     </script>
