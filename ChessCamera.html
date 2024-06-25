@@ -37,7 +37,7 @@
     <script>
         function enable_camera() {
             navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
-                document.getElementById("camstatus").class = "good";
+                document.getElementById("camstatus").className = "good";
                 document.getElementById("camstatus").innerHTML = "Your camera is enabled for this site.";
             });
         }
