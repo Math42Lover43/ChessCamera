@@ -36,7 +36,9 @@
     </body>
     <script>
         function enable_camera() {
-            navigator.mediaDevices.getUserMedia({ video: true });
+            navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
+                alert("Test");
+            });
         }
     </script>
 </html>
