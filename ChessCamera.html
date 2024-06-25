@@ -42,7 +42,7 @@
             navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
                 document.getElementById("camstatus").className = "good";
                 document.getElementById("camstatus").innerHTML = "Your camera is enabled for this site.";
-                document.getElementById("record").style.display = "show";
+                document.getElementById("record").style = null;
             });
         }
     </script>
