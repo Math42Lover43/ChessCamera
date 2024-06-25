@@ -27,8 +27,8 @@
         <p>
             You can use this website to take a photo of chess notation to convert into a PGN file to use on another site.
         </p>
-        <div class="error">
-            Your camera is disabled. Please enable your camera for this website to work properly.
+        <div class="error" id="camstatus">
+            Your camera is disabled for this site. Please enable your camera for this website to work properly.
             <button onclick="enable_camera();">
                 Enable camera
             </button>
@@ -37,7 +37,8 @@
     <script>
         function enable_camera() {
             navigator.mediaDevices.getUserMedia({ video: true }).then(() => {
-                alert("Test");
+                document.getElementById("camstatus").class = "good";
+                document.getElementById("camstatus").innerHTML = "Your camera is enabled for this site.";
             });
         }
     </script>
